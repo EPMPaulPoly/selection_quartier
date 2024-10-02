@@ -73,20 +73,4 @@ def select_quartier(option:int,id_column:str,description_column:str,input_option
                 messagebox.showerror("Erreur", "Entrez une ville valide")
     return region_to_analyse
 
-if __name__ =="__main__":
-    #variables a modifier:
-    pg_host = 'localhost' #defaut localhost
-    pg_port = '5432' #defaut 5432
-    pg_dbname = 'parking_regs_test'# specifique a l'application
-    pg_username = 'postgres' # defaut postgres
-    pg_password = 'admin' # specifique a l'application
-    pg_schemaname = 'public' #defaut public
-    pg_bin_path = '/Applications/Postgres.app/Contents/Versions/13/bin/' # specifique a l'application
-    pg_srid = '32187' #defaut 32188
-    #variables derivees
-    pg_string = 'postgresql://' + pg_username + ':'  + pg_password + '@'  + pg_host + ':'  + pg_port + '/'  + pg_dbname
-    entier_a_renvoyer = select_quartier(1,"ID","NOM",2,db_login=pg_string,db_schema="public",table_name="sec_analyse")
-    print(entier_a_renvoyer)
-
-
  
